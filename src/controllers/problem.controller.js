@@ -4,21 +4,38 @@ function pingProblemController(req,res){
 
 function addProblem(req,res){
 
+    res.status(501).json({
+        message:"Not implemenred"   
+    })
+
 }
 
 function getProblem(req,res){
 
+    res.status(501).json({
+        message:"Not implemenred"   
+    })
+
 }
 
 function getProblems(req,res){
+    res.status(501).json({
+        message:"Not implemenred"   
+    })
 
 }
 
 function deleteProblem(req,res){
+    res.status(501).json({
+        message:"Not implemenred"   
+    })
 
 }
 
 function updateProblem(req,res){
+    res.status(501).json({
+        message:"Not implemenred"   
+    })
     
 }
 
