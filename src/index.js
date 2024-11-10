@@ -30,7 +30,7 @@ app.get('/ping' , function (req,res){
 })
 
 
-//last middleware if any error comes
+//last middleware if any error comes,Try to move it to up!! and check what happened....
 
 app.use(errorHandler);
 

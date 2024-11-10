@@ -11,7 +11,8 @@ function addProblem(req,res,next){
 
         throw new NotImplemented('addProblem');
     }catch(error){
-        next(error);
+         next(error);
+        
 
     }
 
