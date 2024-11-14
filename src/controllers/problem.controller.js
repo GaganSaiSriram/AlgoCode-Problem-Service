@@ -14,7 +14,7 @@ function pingProblemController(req,res){
 async function addProblem(req,res,next){
 
     try {
-        // nothing implemented
+        
 
         
 
@@ -34,7 +34,7 @@ async function addProblem(req,res,next){
 
 }
 
-async function getProblems(req,res){
+async function getProblems(req,res,next){
 
     try {
         const response = await problemService.getAllProblems();
@@ -52,11 +52,20 @@ async function getProblems(req,res){
 
 }
 
-function getProblem(req,res){
+async function getProblem(req,res,next){
     try {
-        // nothing implemented
+        
+        const problem = await problemService.getProblem(req.params.id);
 
-        throw new NotImplemented('getProblems');
+        
+
+        return res.status(StatusCodes.OK).json({
+            success:true,
+            message:"Successfully fetched a problem",
+            error:{},
+            data:problem
+        })
+
     }catch(error){
         next(error);
 
