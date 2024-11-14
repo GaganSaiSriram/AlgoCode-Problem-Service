@@ -42,7 +42,7 @@ app.get('/ping' , function (req,res){
 app.use(errorHandler);
 
 
-app.listen(PORT , function (){
+app.listen(PORT , async function (){
 
     console.log("server running on PORT",PORT);
 

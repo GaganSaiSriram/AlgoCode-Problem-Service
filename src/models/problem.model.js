@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const problemSchema = new mongoose.Schema({
 
     title:{
-          title:String,
+          type:String,
           required:[true,'Title should not be empty']
     },
 
@@ -23,12 +23,12 @@ const problemSchema = new mongoose.Schema({
          {
             input:{
                 type:String,
-                required:true
+                
             },
 
             output:{
                 type:String,
-                required:true
+                
             }
          }
 
