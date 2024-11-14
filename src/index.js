@@ -10,6 +10,8 @@ const connectToDB = require('./config/db.config');
 
 
 
+
+
 const app = express();
 
 app.use(bodyParser.json());
@@ -35,6 +37,8 @@ app.listen(PORT , async function (){
        
        await connectToDB();
        console.log("Successfully conncected to db");
+
+       
 
 
     })
