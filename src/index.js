@@ -12,6 +12,9 @@ const connectToDB = require('./config/db.config');
 
 
 
+const errorHandler = require('./utils/errorHandler');
+
+
 const app = express();
 
 app.use(bodyParser.json());
@@ -19,6 +22,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended : true}));
 
 app.use(bodyParser.text());
+
+
 
 
 app.use('/api' , apiRouter);
@@ -30,7 +35,15 @@ app.get('/ping' , function (req,res){
 })
 
 
-app.listen(PORT , async function (){
+
+
+//last middleware if any error comes,Try to move it to up!! and check what happened....
+
+app.use(errorHandler);
+
+
+app.listen(PORT , function (){
+
     console.log("server running on PORT",PORT);
 
     
