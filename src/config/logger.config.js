@@ -4,7 +4,7 @@ require('winston-mongodb');
 
 const {LOCAL_LOG_DB_URL} = require('../config/server.config');
 
- const allowedTransports = [];
+const allowedTransports = [];
 
 allowedTransports.push(new winston.transports.Console({
     format : winston.format.combine(
@@ -23,6 +23,11 @@ allowedTransports.push(new winston.transports.MongoDB({
     db:LOCAL_LOG_DB_URL,
     collection:'logs',
 
+}));
+
+allowedTransports.push(new winston.transports.File({
+    // filename:`${__dirname}/logs/app.log`
+    filename:'app.log'
 }))
 
 const logger = winston.createLogger({
